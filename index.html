@@ -11,7 +11,7 @@
 
 <body>
 	<!-- Place loading code on top of the body -->
-	<link rel="stylesheet" href="pageloader-loading.css" />
+	<link rel="stylesheet" href="pageloader-spinner.css" />
 	<script type="text/javascript" src="pageloader.js"></script>
 	<!-- Internationalization: set here the text to show as loading. -->
 	<style>
@@ -34,48 +34,7 @@
 		}
 	</style>
 
-	<h1 style="margin-top:3em;">Your HTML page.</h1>
-	<p>
-		Just insert the lightweight script and css before others script on top of the body section of your page.
-		<br />
-		Use pageLoader object to hide or show information.
-	</p>
-	<!-- Buttons on top -->
-	<div style="position:absolute; top:0; z-index:100000;">
-		<button onclick="pageLoader.hide();">Hide</button>
-		<button onclick="addCSS('pageloader-loading.css')">Loading</button>
-		<button onclick="addCSS('pageloader-spinner.css')">Spinner</button>
-		<button onclick="addCSS('pageloader-points.css')">Points</button>
-		<button onclick="addCSS('pageloader-ball.css')">Bounncing ball</button>
-		<button onclick="addCSS('pageloader-pacman.css')">Pacman</button>
-		<button onclick="addCSS('pageloader-gyro.css')">Gyroscope</button>
-		<button onclick="addCSS('pageloader-bars.css')">Bars</button>
-		<button onclick="addCSS('pageloader-loadingbar.css')">Loading bar</button>
-		<button onclick="addCSS('pageloader-classic.css')">Classic bar</button>
-		<button onclick="addCSS('pageloader-cspin.css')">Circle spin</button>
-		<br />
-		Show information: <input onchange="pageLoader.info(this.value);" />
-	</div>
 
-	<script>
-		/** Change css */
-		function addCSS (href)
-		{	// Remove previous css
-			Array.prototype.forEach.call(document.querySelectorAll('[rel="stylesheet"],[type="text/css"]'),
-				function(element)
-				{	try{
-						element.parentNode.removeChild(element)
-					}catch(err){}
-				});
-			// Add new one
-			var head  = document.getElementsByTagName('head')[0];
-			var link  = document.createElement('link');
-			link.rel  = 'stylesheet';
-			link.type = 'text/css';
-			link.href = href;
-			link.media = 'all';
-			head.appendChild(link);
-			pageLoader.show();
-		}
-	</script>
+
+
 </body>
